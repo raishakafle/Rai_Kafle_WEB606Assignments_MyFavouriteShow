@@ -1,6 +1,21 @@
-<app-content-card
-  *ngFor="let content of contentList.slice(0, 5)"
-  [content]="content"
+<input [(ngModel)]="searchTitle" placeholder="Enter Content Title">
+<button (click)="searchContent()">Search</button> 
 
-  [class.border]="content.id === 1"
-></app-content-card>
+<p [style.color]="foundContent ? 'green' : 'red'">
+  {{ foundContent ? 'Content item exists' : 'Content item does not exist' }}
+</p> 
+
+<h2>No Type</h2>
+<div *ngFor="let content of contentList | typeFilter: ''">
+  <app-content-card [content]="content" [class.type1]="content.type === 'type1'" [class.type2]="content.type === 'type2'"></app-content-card>
+</div>
+
+<h2>Type 1</h2>
+<div *ngFor="let content of contentList | typeFilter: 'type1'">
+  <app-content-card [content]="content" [class.type1]="content.type === 'type1'" [class.type2]="content.type === 'type2'"></app-content-card>
+</div>
+
+<h2>Type 2</h2>
+<div *ngFor="let content of contentList | typeFilter: 'type2'">
+  <app-content-card [content]="content" [class.type1]="content.type === 'type1'" [class.type2]="content.type === 'type2'"></app-content-card>
+</div>
