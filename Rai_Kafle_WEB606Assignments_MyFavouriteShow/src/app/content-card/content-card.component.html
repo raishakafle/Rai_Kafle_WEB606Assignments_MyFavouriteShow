@@ -1,11 +1,36 @@
 <div class="card" (click)="handleImageClick()">
   <h2>{{ content.title }}</h2>
-  <div class="image-container" *ngIf="content.imgURL">
-    <img [src]="content.imgURL" alt="{{ content.title }}" />
+  <!-- <div class="image-container" *ngIf="content.imgURL">
+    <img [src]="content.imgURL"  />
+  </div> -->
+  <div class="image-container">
+    <img [src]="content.imgURL" alt="{{ content.title }}" *ngIf="content.imgURL; else defaultImage" />
+    <ng-template #defaultImage>
+      <img src="https://i.pcmag.com/imagery/reviews/05cItXL96l4LE9n02WfDR0h-5.fit_scale.size_760x427.v1582751026.png" alt="Default Image" />
+    </ng-template>
   </div>
+
+  <!--  -->
+  <div class="content-details">
+    <!--  -->
+  
   <div class="description" *ngIf="content.description">
+    <div class="type" appHoverAffect>
     <p>{{ content.description }}</p>
   </div>
+  <div class="description">
+    <span *ngFor="let tag of content.description" appHoverAffect>{{ tag }}</span>
+  </div>
+</div>
+<div class="type" appHoverAffect>
+  {{ content.type }}
+</div>
+
+
+
+
+
+</div>
   <div class="creator" *ngIf="content.creator">
     <p>Creator: {{ content.creator }}</p>
   </div>
@@ -16,3 +41,21 @@
     <p *ngFor="let tag of content.tags">Tag: {{ tag }}</p>
   </div>
 </div>
+
+<!-- <div class="content-card">
+  <div class="image-container">
+    <img [src]="content.imgUrl" alt="Content Image" *ngIf="content.imgUrl; else defaultImage" />
+    <ng-template #defaultImage>
+      <img src="path/to/default-image.jpg" alt="Default Image" />
+    </ng-template>
+  </div>
+  <div class="content-details">
+    <h3 class="title">{{ content.title }}</h3>
+    <div class="type" appHoverAffect>
+      {{ content.type }}
+    </div>
+    <div class="tags">
+      <span *ngFor="let tag of content.tags" appHoverAffect>{{ tag }}</span>
+    </div>
+  </div>
+</div> -->
