@@ -1,0 +1,12 @@
+<div>
+    <mat-form-field>
+    <input type="text" [(ngModel)]="title" placeholder="Title">
+    <input type="text" [(ngModel)]="description" placeholder="Description">
+    <input type="text" [(ngModel)]="creator" placeholder="Creator">
+    <input type="text" [(ngModel)]="imgURL" placeholder="Image URL">
+    <input type="text" [(ngModel)]="type" placeholder="Type">
+    <input type="text" [(ngModel)]="tags" placeholder="Tags (comma separated)">
+  </mat-form-field>
+    <!-- <button mat-button (click)="addContent()">Add Content</button> -->
+    <button mat-raised-button (click)="openDialog()">Add New Content</button>
+  </div>

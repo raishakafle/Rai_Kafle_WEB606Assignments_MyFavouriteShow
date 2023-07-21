@@ -1,5 +1,10 @@
+<app-modify-content (contentAdded)="refreshList($event)"></app-modify-content>
+<!-- Rest of the content list here -->
 
-<input  placeholder="Enter Content Title"> 
+
+
+
+<input [(ngModel)]="searchTitle" placeholder="Enter Content Title">
 <button (click)="searchContent()">Search</button>
 
 <p [style.color]="foundContent ? 'green' : 'red'">
