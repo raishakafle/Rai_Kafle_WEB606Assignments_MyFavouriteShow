@@ -1,0 +1,9 @@
+<div *ngIf="content">
+   
+    <h2>{{ content.title }}</h2>
+    <p>{{ content.description }}</p>
+    <!-- Add other content details -->
+    
+    <!-- Add the link to go back to the content list -->
+    <a [routerLink]="['/list']">Back to Content List</a>
+  </div>

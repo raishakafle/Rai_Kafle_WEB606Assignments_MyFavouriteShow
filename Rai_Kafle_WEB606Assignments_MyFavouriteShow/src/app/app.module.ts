@@ -10,6 +10,7 @@ import { ModifyContentComponent } from './modify-content/modify-content.componen
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
 // import { ContentDetailComponent } from './content-detail/content-detail.component';
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AddContentDialogComponent } from './add-content-dialog/add-content-dial
     ModifyContentComponent,
     MatInputModule,
     MatButtonModule,
-    AddContentDialogComponent
+    AddContentDialogComponent,
+    ContentDetailComponent
   ],
   imports: [
     BrowserModule
