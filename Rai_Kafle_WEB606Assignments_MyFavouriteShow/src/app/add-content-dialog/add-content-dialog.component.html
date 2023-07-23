@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Add Content</h2>
+<mat-dialog-content>
+  <!-- Your inputs for creating new content, including id -->
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="title">
+  </mat-form-field>
+  <!-- Other input fields for description, creator, etc. -->
+
+  <!-- You can include the id input but set it to be disabled -->
+  <mat-form-field>
+    <input matInput placeholder="ID" [(ngModel)]="id" disabled>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="dialogData" cdkFocusInitial>Add</button>
+</mat-dialog-actions>
