@@ -1,9 +1,9 @@
 {
   "name": "rai-kafle-my-favourite-show",
-  "version": "0.0.1",
+  "version": "0.0.10",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "http-server -p 4200 -c-1 dist/RaishaKafleMyFavouriteShow",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
