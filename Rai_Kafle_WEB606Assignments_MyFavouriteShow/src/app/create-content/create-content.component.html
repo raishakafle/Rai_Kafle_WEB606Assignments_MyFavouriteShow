@@ -1,0 +1,28 @@
+<div>
+    <h2>Create Content</h2>
+    <form (ngSubmit)="submitContent()">
+      <label for="id">ID:</label>
+      <input type="number" id="id" [(ngModel)]="newContent.id" required>
+      <br>
+      <label for="title">Title:</label>
+      <input type="text" id="title" [(ngModel)]="newContent.title" required>
+      <br>
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="newContent.description" required></textarea>
+      <br>
+      <label for="creator">Creator:</label>
+      <input type="text" id="creator" [(ngModel)]="newContent.creator" required>
+      <br>
+      <label for="imgURL">Image URL:</label>
+      <input type="text" id="imgURL" [(ngModel)]="newContent.imgURL">
+      <br>
+      <label for="type">Type:</label>
+      <input type="text" id="type" [(ngModel)]="newContent.type">
+      <br>
+      <label for="tags">Tags:</label>
+      <input type="text" id="tags" [(ngModel)]="newContent.tags" placeholder="Separate tags with commas">
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </div>
